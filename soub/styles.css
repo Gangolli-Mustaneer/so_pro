@@ -1,0 +1,1346 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    color: #333;
+}
+
+/* Navigation */
+.navbar {
+    background-color: rgba(255, 255, 255, 0.95);
+    padding: 1rem 5%;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+}
+
+.navbar:hover {
+    background-color: rgba(255, 255, 255, 0.98);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    transition: transform 0.3s ease;
+}
+
+.logo:hover {
+    transform: scale(1.02);
+}
+
+.logo-img {
+    width: 45px;
+    height: 45px;
+    transition: all 0.3s ease;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+}
+
+.logo:hover .logo-img {
+    transform: rotate(5deg);
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
+}
+
+.logo h1 {
+    color: #2c3e50;
+    font-size: 1.8rem;
+    font-weight: 700;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+    transition: color 0.3s ease;
+}
+
+.logo:hover h1 {
+    color: #3498db;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 2.5rem;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #2c3e50;
+    font-weight: 600;
+    font-size: 1.1rem;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 2px;
+    background-color: #3498db;
+    transition: width 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #3498db;
+    background-color: rgba(52, 152, 219, 0.1);
+}
+
+.nav-links a:hover::after {
+    width: 80%;
+}
+
+/* Hero Section */
+.hero {
+    height: 100vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+                url('https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=1920') center/cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    padding: 0 1rem;
+}
+
+.hero-content h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    animation: fadeInUp 1s ease;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    animation: fadeInUp 1s ease 0.2s;
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 1rem 2rem;
+    background-color: #3498db;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    animation: fadeInUp 1s ease 0.4s;
+}
+
+.cta-button:hover {
+    background-color: #2980b9;
+    transform: translateY(-3px);
+}
+
+/* Daily Tip Section Styles */
+.daily-tip {
+    padding: 2rem;
+    background: linear-gradient(135deg, #f6f9fc 0%, #eef2f7 100%);
+}
+
+.tip-card {
+    max-width: 800px;
+    margin: 0 auto;
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    transition: transform 0.3s ease;
+}
+
+.tip-card:hover {
+    transform: translateY(-5px);
+}
+
+.tip-icon {
+    background: linear-gradient(135deg, #4CAF50 0%, #45a049 100%);
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.tip-icon i {
+    font-size: 2.5rem;
+    color: white;
+}
+
+.tip-content {
+    flex-grow: 1;
+}
+
+.tip-content h2 {
+    color: #2c3e50;
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.tip-text {
+    position: relative;
+    padding: 1rem 0;
+    margin-bottom: 1.5rem;
+}
+
+.tip-text i.fa-quote-left {
+    color: #4CAF50;
+    font-size: 1.5rem;
+    position: absolute;
+    left: -10px;
+    top: -10px;
+}
+
+.tip-text i.fa-quote-right {
+    color: #4CAF50;
+    font-size: 1.5rem;
+    position: absolute;
+    right: -10px;
+    bottom: -10px;
+}
+
+.tip-text p {
+    color: #34495e;
+    font-size: 1.2rem;
+    line-height: 1.6;
+    font-style: italic;
+    padding: 0 1.5rem;
+}
+
+.tip-button {
+    background: linear-gradient(135deg, #4CAF50 0%, #45a049 100%);
+    color: white;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 50px;
+    font-size: 1rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all 0.3s ease;
+}
+
+.tip-button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(76, 175, 80, 0.3);
+}
+
+.tip-button i {
+    font-size: 1rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .tip-card {
+        flex-direction: column;
+        text-align: center;
+        padding: 1.5rem;
+    }
+
+    .tip-icon {
+        margin-bottom: 1rem;
+    }
+
+    .tip-text i.fa-quote-left {
+        left: 0;
+    }
+
+    .tip-text i.fa-quote-right {
+        right: 0;
+    }
+
+    .tip-button {
+        margin: 0 auto;
+    }
+}
+
+/* Workout Categories */
+.workout-categories {
+    padding: 4rem 5%;
+}
+
+.category-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+    padding: 0 1rem;
+}
+
+.category-card {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+}
+
+.category-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.category-card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.category-card:hover img {
+    transform: scale(1.05);
+}
+
+.category-card h3 {
+    padding: 1rem;
+    color: #2c3e50;
+}
+
+.category-card p {
+    padding: 0 1rem;
+    color: #666;
+}
+
+.category-button {
+    display: inline-block;
+    margin: 1rem;
+    padding: 0.8rem 1.5rem;
+    background-color: #3498db;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.category-button:hover {
+    background-color: #2980b9;
+}
+
+/* Tutorials Section */
+.tutorials {
+    padding: 4rem 5%;
+    background-color: #f8f9fa;
+}
+
+.tutorial-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+    padding: 0 1rem;
+}
+
+.tutorial-card {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.tutorial-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.tutorial-card h3 {
+    padding: 1rem;
+    color: #2c3e50;
+    font-size: 1.2rem;
+}
+
+.tutorial-card p {
+    padding: 0 1rem 1rem;
+    color: #666;
+}
+
+.video-container {
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+    background: #000;
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+/* Blog Section */
+.blog {
+    padding: 4rem 5%;
+}
+
+.blog-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+    padding: 0 1rem;
+}
+
+.blog-card {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.blog-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.blog-card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.blog-card:hover img {
+    transform: scale(1.05);
+}
+
+.blog-card h3 {
+    padding: 1.5rem 1.5rem 0.5rem;
+    color: #2c3e50;
+    font-size: 1.4rem;
+}
+
+.blog-card p {
+    padding: 0 1.5rem;
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+.blog-content {
+    padding: 0 1.5rem;
+    margin-bottom: 1.5rem;
+    display: none;
+}
+
+.blog-card.active .blog-content {
+    display: block;
+    animation: fadeIn 0.5s ease;
+}
+
+.blog-content h4 {
+    color: #2c3e50;
+    margin: 1rem 0;
+    font-size: 1.2rem;
+}
+
+.blog-content ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 1rem 0;
+}
+
+.blog-content ul li {
+    padding: 0.5rem 0;
+    color: #666;
+    position: relative;
+    padding-left: 1.5rem;
+}
+
+.blog-content ul li::before {
+    content: '•';
+    color: #3498db;
+    position: absolute;
+    left: 0;
+    font-size: 1.2rem;
+}
+
+.read-more {
+    display: inline-block;
+    margin: 0 1.5rem 1.5rem;
+    color: #3498db;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+    cursor: pointer;
+}
+
+.read-more:hover {
+    color: #2980b9;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Footer */
+footer {
+    background-color: #2c3e50;
+    color: white;
+    padding: 4rem 5% 2rem;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.footer-section h3 {
+    margin-bottom: 1rem;
+}
+
+.footer-section ul {
+    list-style: none;
+}
+
+.footer-section ul li {
+    margin-bottom: 0.5rem;
+}
+
+.footer-section a {
+    color: white;
+    text-decoration: none;
+}
+
+.social-links {
+    display: flex;
+    gap: 1rem;
+}
+
+.social-links a {
+    font-size: 1.5rem;
+    transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+    color: #3498db;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .navbar {
+        padding: 0.8rem 1rem;
+    }
+
+    .logo-img {
+        width: 35px;
+        height: 35px;
+    }
+
+    .logo h1 {
+        font-size: 1.5rem;
+    }
+
+    .nav-links {
+        position: fixed;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background-color: rgba(255, 255, 255, 0.98);
+        padding: 1rem;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+        transform: translateY(-100%);
+        opacity: 0;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .nav-links.active {
+        transform: translateY(0);
+        opacity: 1;
+    }
+
+    .nav-links a {
+        width: 100%;
+        text-align: center;
+        padding: 0.8rem;
+    }
+
+    .mobile-menu-btn {
+        display: block;
+    }
+
+    .category-grid,
+    .tutorial-grid,
+    .blog-grid {
+        grid-template-columns: 1fr;
+        padding: 0 1rem;
+    }
+
+    section h2 {
+        font-size: 2rem;
+    }
+
+    .category-card,
+    .tutorial-card,
+    .blog-card {
+        margin: 0 auto;
+        max-width: 400px;
+    }
+
+    .blog-card h3 {
+        font-size: 1.2rem;
+        padding: 1rem 1rem 0.5rem;
+    }
+
+    .blog-card p,
+    .blog-content {
+        padding: 0 1rem;
+    }
+
+    .read-more {
+        margin: 0 1rem 1rem;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1200px) {
+    .category-grid,
+    .tutorial-grid,
+    .blog-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1201px) {
+    .category-grid,
+    .tutorial-grid,
+    .blog-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* Mobile Menu Button */
+.mobile-menu-btn {
+    display: none;
+    background: none;
+    border: none;
+    color: #2c3e50;
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 0.5rem;
+    transition: all 0.3s ease;
+}
+
+.mobile-menu-btn:hover {
+    color: #3498db;
+    transform: scale(1.1);
+}
+
+/* Section Headers Enhancement */
+section h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    color: #2c3e50;
+    margin-bottom: 2rem;
+    position: relative;
+    padding-bottom: 1rem;
+}
+
+section h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 3px;
+    background: #3498db;
+    border-radius: 2px;
+}
+
+/* Section Modal Styles */
+.section-modal {
+    padding: 20px;
+}
+
+.section-modal h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #2c3e50;
+    font-size: 32px;
+}
+
+.section-modal .category-grid,
+.section-modal .tutorial-grid,
+.section-modal .blog-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    padding: 0;
+    margin: 0;
+}
+
+.section-modal .category-card,
+.section-modal .tutorial-card,
+.section-modal .blog-card {
+    margin: 0;
+    max-width: none;
+}
+
+/* Enhanced Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.modal.active {
+    opacity: 1;
+}
+
+.modal-content {
+    background-color: #fff;
+    border-radius: 15px;
+    padding: 0;
+    max-width: 1200px;
+    width: 95%;
+    max-height: 90vh;
+    overflow-y: auto;
+    position: relative;
+    box-shadow: 0 5px 30px rgba(0, 0, 0, 0.3);
+    transform: scale(0.9);
+    transition: transform 0.3s ease;
+}
+
+.modal.active .modal-content {
+    transform: scale(1);
+}
+
+/* Scrollbar Styles */
+.modal-content::-webkit-scrollbar {
+    width: 8px;
+}
+
+.modal-content::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 4px;
+}
+
+.modal-content::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 4px;
+}
+
+.modal-content::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+/* Responsive Modal */
+@media (max-width: 768px) {
+    .modal-content {
+        padding: 15px;
+        width: 100%;
+        height: 100%;
+        max-height: 100vh;
+        border-radius: 0;
+    }
+
+    .section-modal .category-grid,
+    .section-modal .tutorial-grid,
+    .section-modal .blog-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .close-modal {
+        top: 10px;
+        right: 10px;
+    }
+}
+
+/* Make cards more interactive */
+.tutorial-card,
+.category-card,
+.blog-card {
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.tutorial-card:hover,
+.category-card:hover,
+.blog-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.tutorial-card::after,
+.category-card::after,
+.blog-card::after {
+    content: 'Click to view';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.tutorial-card:hover::after,
+.category-card:hover::after,
+.blog-card:hover::after {
+    opacity: 1;
+}
+
+/* Close Button Styles */
+.close-modal {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    width: 40px;
+    height: 40px;
+    background-color: #fff;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    color: #333;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    z-index: 1001;
+}
+
+.close-modal:hover {
+    background-color: #e74c3c;
+    color: white;
+    transform: rotate(90deg);
+}
+
+.close-modal::before {
+    content: '×';
+    font-size: 32px;
+    line-height: 1;
+}
+
+/* Modal Header */
+.modal-header {
+    position: relative;
+    padding: 20px;
+    border-bottom: 1px solid #eee;
+    margin-bottom: 20px;
+}
+
+.modal-header h2 {
+    margin: 0;
+    padding-right: 40px; /* Space for close button */
+}
+
+.modal-body {
+    padding: 20px;
+}
+
+/* Tutorial Modal Styles */
+.tutorial-modal {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.tutorial-modal .video-container {
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    background: #000;
+}
+
+.tutorial-modal .video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+.tutorial-info {
+    padding: 20px;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.tutorial-info h3 {
+    color: #2c3e50;
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+.tutorial-info p {
+    color: #666;
+    line-height: 1.6;
+    font-size: 16px;
+}
+
+/* Update Modal Content for Tutorials */
+.modal-content {
+    background-color: #fff;
+    border-radius: 15px;
+    padding: 0;
+    max-width: 1000px;
+    width: 95%;
+    max-height: 90vh;
+    overflow-y: auto;
+    position: relative;
+    box-shadow: 0 5px 30px rgba(0, 0, 0, 0.3);
+    transform: scale(0.9);
+    transition: transform 0.3s ease;
+}
+
+/* Tutorial Card Hover Effect */
+.tutorial-card {
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.tutorial-card::after {
+    content: 'Click to Watch';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.tutorial-card:hover::after {
+    opacity: 1;
+}
+
+/* Responsive Tutorial Modal */
+@media (max-width: 768px) {
+    .tutorial-modal {
+        padding: 10px;
+    }
+
+    .tutorial-info {
+        padding: 15px;
+    }
+
+    .tutorial-info h3 {
+        font-size: 20px;
+    }
+}
+
+/* Article Modal Styles */
+.article-modal {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.article-image {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 15px 15px 0 0;
+}
+
+.article-content {
+    padding: 2rem;
+}
+
+.article-content h3 {
+    color: #2c3e50;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.article-description {
+    color: #666;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #eee;
+}
+
+.article-body {
+    color: #444;
+    line-height: 1.8;
+}
+
+.article-body h4 {
+    color: #2c3e50;
+    font-size: 1.4rem;
+    margin: 1.5rem 0 1rem;
+}
+
+.article-body ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 1rem 0;
+}
+
+.article-body ul li {
+    padding: 0.8rem 0;
+    color: #666;
+    position: relative;
+    padding-left: 2rem;
+}
+
+.article-body ul li::before {
+    content: '•';
+    color: #3498db;
+    position: absolute;
+    left: 0;
+    font-size: 1.5rem;
+}
+
+.article-body p {
+    margin: 1rem 0;
+    color: #666;
+}
+
+/* Update Modal Content for Articles */
+.modal-content {
+    background-color: #fff;
+    border-radius: 15px;
+    padding: 0;
+    max-width: 1000px;
+    width: 95%;
+    max-height: 90vh;
+    overflow-y: auto;
+    position: relative;
+    box-shadow: 0 5px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* Responsive Article Modal */
+@media (max-width: 768px) {
+    .article-content {
+        padding: 1.5rem;
+    }
+
+    .article-image {
+        height: 200px;
+    }
+
+    .article-content h3 {
+        font-size: 1.6rem;
+    }
+
+    .article-description {
+        font-size: 1rem;
+    }
+
+    .article-body h4 {
+        font-size: 1.2rem;
+    }
+}
+
+/* Article Content Styles */
+.food-section {
+    margin: 2rem 0;
+    padding: 1.5rem;
+    background: #f8f9fa;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.food-section h5 {
+    color: #2c3e50;
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid #3498db;
+}
+
+.food-section p {
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+.food-section ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 1rem 0;
+}
+
+.food-section ul li {
+    padding: 0.5rem 0;
+    color: #666;
+    position: relative;
+    padding-left: 1.8rem;
+}
+
+.food-section ul li::before {
+    content: '✓';
+    color: #3498db;
+    position: absolute;
+    left: 0;
+    font-weight: bold;
+}
+
+.key-points {
+    margin: 2rem 0;
+    padding: 1.5rem;
+    background: #e8f4fc;
+    border-radius: 10px;
+    border-left: 4px solid #3498db;
+}
+
+.key-points h4 {
+    color: #2c3e50;
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+}
+
+.key-points ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 1rem 0;
+}
+
+.key-points ul li {
+    padding: 0.8rem 0;
+    color: #666;
+    position: relative;
+    padding-left: 2rem;
+}
+
+.key-points ul li::before {
+    content: '•';
+    color: #3498db;
+    position: absolute;
+    left: 0;
+    font-size: 1.5rem;
+}
+
+.key-points p {
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(52, 152, 219, 0.2);
+    color: #666;
+    font-style: italic;
+}
+
+/* Responsive Article Styles */
+@media (max-width: 768px) {
+    .food-section,
+    .key-points {
+        padding: 1rem;
+        margin: 1.5rem 0;
+    }
+
+    .food-section h5 {
+        font-size: 1.2rem;
+    }
+
+    .key-points h4 {
+        font-size: 1.2rem;
+    }
+}
+
+/* Recovery Section Styles */
+.recovery-section ul li:before {
+    content: "✓";
+    color: #3498db;
+    position: absolute;
+    left: 0;
+    font-weight: bold;
+}
+
+/* Strength Section Styles */
+.strength-section ul li:before {
+    content: "✓";
+    color: #3498db;
+    position: absolute;
+    left: 0;
+    font-weight: bold;
+}
+
+/* Cardio Section Styles */
+.cardio-section ul li:before {
+    content: "✓";
+    color: #3498db;
+    position: absolute;
+    left: 0;
+    font-weight: bold;
+}
+
+/* Weight Loss Section Styles */
+.weight-loss-section ul li:before {
+    content: "✓";
+    color: #3498db;
+    position: absolute;
+    left: 0;
+    font-weight: bold;
+}
+
+/* Mental Health Section Styles */
+.mental-health-section ul li:before {
+    content: "✓";
+    color: #3498db;
+    position: absolute;
+    left: 0;
+    font-weight: bold;
+}
+
+/* Common Article Section Styles */
+.recovery-section,
+.strength-section,
+.cardio-section,
+.weight-loss-section,
+.mental-health-section {
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.recovery-section h5,
+.strength-section h5,
+.cardio-section h5,
+.weight-loss-section h5,
+.mental-health-section h5 {
+    color: #2c3e50;
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+}
+
+.recovery-section p,
+.strength-section p,
+.cardio-section p,
+.weight-loss-section p,
+.mental-health-section p {
+    color: #666;
+    margin-bottom: 1rem;
+    line-height: 1.6;
+}
+
+.recovery-section ul,
+.strength-section ul,
+.cardio-section ul,
+.weight-loss-section ul,
+.mental-health-section ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.recovery-section ul li,
+.strength-section ul li,
+.cardio-section ul li,
+.weight-loss-section ul li,
+.mental-health-section ul li {
+    padding: 0.5rem 0;
+    padding-left: 1.5rem;
+    position: relative;
+    color: #555;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .recovery-section,
+    .strength-section,
+    .cardio-section,
+    .weight-loss-section,
+    .mental-health-section {
+        padding: 1rem;
+    }
+
+    .recovery-section h5,
+    .strength-section h5,
+    .cardio-section h5,
+    .weight-loss-section h5,
+    .mental-health-section h5 {
+        font-size: 1.1rem;
+    }
+
+    .recovery-section ul li,
+    .strength-section ul li,
+    .cardio-section ul li,
+    .weight-loss-section ul li,
+    .mental-health-section ul li {
+        font-size: 0.9rem;
+    }
+} 

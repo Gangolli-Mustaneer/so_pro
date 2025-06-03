@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FitLife - Your Ultimate Fitness Guide</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="logo">
+            <img src="https://cdn-icons-png.flaticon.com/512/2936/2936886.png" alt="FitLife Logo" class="logo-img">
+            <h1>FitLife</h1>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#home" class="active">Home</a></li>
+            <li><a href="#workouts" class="nav-link" data-section="workouts">Workouts</a></li>
+            <li><a href="#tutorials" class="nav-link" data-section="tutorials">Tutorials</a></li>
+            <li><a href="#blog" class="nav-link" data-section="blog">Articles</a></li>
+        </ul>
+        <button class="mobile-menu-btn" aria-label="Toggle menu">
+            <i class="fas fa-bars"></i>
+        </button>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Transform Your Life</h1>
+            <p>Start your fitness journey today with expert guidance</p>
+            <a href="#workouts" class="cta-button">Start Working Out</a>
+        </div>
+    </section>
+
+    <!-- Daily Tip Card -->
+    <section class="daily-tip">
+        <div class="tip-card">
+            <div class="tip-icon">
+                <i class="fas fa-lightbulb"></i>
+            </div>
+            <div class="tip-content">
+                <h2>Daily Fitness Tip</h2>
+                <div class="tip-text">
+                    <i class="fas fa-quote-left"></i>
+                    <p id="tip-content">Loading tip...</p>
+                    <i class="fas fa-quote-right"></i>
+                </div>
+                <button onclick="getNewTip()" class="tip-button">
+                    <i class="fas fa-sync-alt"></i>
+                    New Tip
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Workout Categories -->
+    <section id="workouts" class="workout-categories">
+        <h2>Workout Categories</h2>
+        <div class="category-grid">
+            <div class="category-card" data-category="cardio" data-video="VWj8ZxCxrYk">
+                <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=800" alt="Cardio Workout">
+                <h3>Cardio</h3>
+                <p>Boost your endurance and burn calories</p>
+                <a href="#" class="category-button">View Tutorials</a>
+            </div>
+            <div class="category-card" data-category="strength" data-video="wp8GE26ibbI">
+                <img src="https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?w=800" alt="Strength Training">
+                <h3>Strength</h3>
+                <p>Build muscle and increase power</p>
+                <a href="#" class="category-button">View Tutorials</a>
+            </div>
+            <div class="category-card" data-category="yoga" data-video="v7AYKMP6rOE">
+                <img src="https://media.gettyimages.com/id/1483989816/photo/adult-arab-male-with-a-ponytail-meditating-in-a-yoga-class.jpg?s=612x612&w=0&k=20&c=FTkO8dit_ZWB_9mUk2bmkELm2mpC-NqH82nCmK1Wx6M=" alt="Yoga">
+                <h3>Yoga</h3>
+                <p>Improve flexibility and mindfulness</p>
+                <a href="#" class="category-button">View Tutorials</a>
+            </div>
+            <div class="category-card" data-category="hiit" data-video="jpizoUy4K9s">
+                <img src="https://images.unsplash.com/photo-1599058917765-a780eda07a3e?w=800" alt="HIIT">
+                <h3>HIIT</h3>
+                <p>High-intensity interval training</p>
+                <a href="#" class="category-button">View Tutorials</a>
+            </div>
+            <div class="category-card" data-category="crossfit" data-video="BQ5JLnshejQ">
+                <img src="https://images.unsplash.com/photo-1576678927484-cc907957088c?w=800" alt="CrossFit">
+                <h3>CrossFit</h3>
+                <p>Functional movements for overall fitness</p>
+                <a href="#" class="category-button">View Tutorials</a>
+            </div>
+            <div class="category-card" data-category="pilates" data-video="C2HX2pNbUCM">
+                <img src="https://media.gettyimages.com/id/1483229766/photo/multiethnic-group-of-men-and-women-in-higher-level-yoga-training.jpg?s=612x612&w=0&k=20&c=VsmWwhKjyELPRDyqTjNg-vOoJOIi4DF_bYVDhmWduCg=" alt="Pilates">
+                <h3>Pilates</h3>
+                <p>Core strength and body control</p>
+                <a href="#" class="category-button">View Tutorials</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tutorials Section -->
+    <section id="tutorials" class="tutorials">
+        <h2>Featured Tutorials</h2>
+        <div class="tutorial-grid">
+            <div class="tutorial-card" data-tutorial="pushup" data-video="IODxDxX7oi4">
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/IODxDxX7oi4" frameborder="0" allowfullscreen></iframe>
+                </div>
+                <h3>Perfect Push-up Form</h3>
+                <p>Learn the correct technique for maximum results</p>
+            </div>
+            <div class="tutorial-card" data-tutorial="squat">
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/3VcKaXpzqRo" frameborder="0" allowfullscreen></iframe>
+                </div>
+                <h3>Beginner Squat Guide</h3>
+                <p>Master the fundamental squat movement</p>
+            </div>
+            <div class="tutorial-card" data-tutorial="hiit">
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/M0uO8X3_tEA" frameborder="0" allowfullscreen></iframe>
+                </div>
+                <h3>HIIT Cardio Workout</h3>
+                <p>High-intensity interval training for maximum calorie burn</p>
+            </div>
+            <div class="tutorial-card" data-tutorial="yoga">
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/4pKly2JojMw" frameborder="0" allowfullscreen></iframe>
+                </div>
+                <h3>Yoga for Beginners</h3>
+                <p>Start your yoga journey with these basic poses</p>
+            </div>
+            <div class="tutorial-card" data-tutorial="core">
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/IR0yV_3DfBo" 
+                            frameborder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen>
+                    </iframe>
+                </div>
+                <h3>Core Strength Workout</h3>
+                <p>Build a strong and stable core</p>
+            </div>
+            <div class="tutorial-card" data-tutorial="stretch">
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/y87vSUoIMGU" 
+                            frameborder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen>
+                    </iframe>
+                </div>
+                <h3>Full Body Stretch</h3>
+                <p>Essential stretches for flexibility and recovery</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Section -->
+    <section id="blog" class="blog">
+        <h2>Latest Articles</h2>
+        <div class="blog-grid">
+            <!-- Nutrition Tips Article -->
+            <div class="blog-card" data-blog="muscle_growth">
+                <img src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=800" alt="Nutrition Tips">
+                <h3>Nutrition Tips for Muscle Growth</h3>
+                <p>Discover the best foods and nutrition strategies for building lean muscle mass effectively.</p>
+                <a href="#" class="read-more">Read More</a>
+            </div>
+
+            <!-- Recovery Article -->
+            <div class="blog-card" data-blog="recovery">
+                <img src="https://images.unsplash.com/photo-1518611012118-696072aa579a?w=800" alt="Recovery Tips">
+                <h3>Importance of Recovery in Fitness</h3>
+                <p>Learn about proper recovery techniques and their crucial role in your fitness journey.</p>
+                <a href="#" class="read-more">Read More</a>
+            </div>
+
+            <!-- Strength Training Article -->
+            <div class="blog-card" data-blog="strength">
+                <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=800" alt="Strength Training">
+                <h3>Essential Strength Training Principles</h3>
+                <p>Master the fundamental principles of strength training for optimal results.</p>
+                <a href="#" class="read-more">Read More</a>
+            </div>
+
+            <!-- Cardio Training Article -->
+            <div class="blog-card" data-blog="cardio">
+                <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=800" alt="Cardio Training">
+                <h3>Effective Cardio Training Strategies</h3>
+                <p>Explore different cardio training methods and their benefits for overall fitness.</p>
+                <a href="#" class="read-more">Read More</a>
+            </div>
+
+            <!-- Weight Loss Article -->
+            <div class="blog-card" data-blog="weight_loss">
+                <img src="https://images.unsplash.com/photo-1490818387583-1baba5e638af?w=800" alt="Weight Loss">
+                <h3>Effective Weight Loss Strategies</h3>
+                <p>Learn proven strategies for sustainable weight loss and healthy living.</p>
+                <a href="#" class="read-more">Read More</a>
+            </div>
+
+            <!-- Mental Health Article -->
+            <div class="blog-card" data-blog="mental_health">
+                <img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=800" alt="Mental Health">
+                <h3>Mental Health and Fitness Connection</h3>
+                <p>Discover how exercise and mental well-being are interconnected.</p>
+                <a href="#" class="read-more">Read More</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>FitLife</h3>
+                <p>Your journey to a healthier lifestyle starts here.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#workouts" class="nav-link" data-section="workouts">Workouts</a></li>
+                    <li><a href="#tutorials" class="nav-link" data-section="tutorials">Tutorials</a></li>
+                    <li><a href="#blog" class="nav-link" data-section="blog">Articals</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Connect With Us</h3>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 FitLife. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html> 
